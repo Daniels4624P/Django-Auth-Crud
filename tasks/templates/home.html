@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Django App</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, alias quidem sunt ab consectetur deleniti incidunt nam corporis nostrum illo esse quo quam accusantium voluptatibus, ratione minima fugiat saepe ipsa ex. Distinctio aperiam quis quam nihil rerum necessitatibus officiis ut laboriosam, accusamus facilis, eligendi laborum deleniti, repellendus deserunt numquam. Debitis incidunt animi accusamus voluptatum laboriosam saepe possimus corporis, at natus fugit quae dicta inventore sapiente temporibus ullam omnis aliquam molestias modi minima explicabo unde dolor repudiandae. Architecto soluta sapiente recusandae sequi possimus voluptas sed fugit at cum cupiditate molestias et voluptates, sunt veritatis asperiores nam laudantium temporibus fuga ab. Enim.</p>
+        {% if user.is_authenticated%}
+        {% else %}
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-secondary" href="{% url 'signin' %}">
+                Signin
+            </a>
+            <a class="btn btn-dark" href="{% url 'signup' %}">
+                Signup
+            </a>
+        </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}
